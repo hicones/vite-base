@@ -1,7 +1,7 @@
 export function HomePage() {
   return (
-    <div>
+    <main className="flex items-center justify-center size-full">
       <h1>Vite + React</h1>
-    </div>
+    </main>
   );
 }
