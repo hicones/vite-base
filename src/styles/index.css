@@ -1,20 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@theme static {
+  --color-theme-background: "#1A1A1A";
+  --color-backgroundSecondary: "#2C2C2C";
+  --color-primary: "#FFD700";
+  --color-secondary: "#FF4500";
+  --color-text: "#FFFFFF";
+  --color-theme-textSecondary: "#C0C0C0";
+  --font-heading: "Sora", sans-serif;
+  --font-sans: "Inter", sans-serif;
 }
 
 @layer base {
@@ -23,7 +28,7 @@
     font-family: "Inter", sans-serif;
   }
   body {
-    @apply bg-background text-textSecondary min-h-screen;
+    @apply bg-theme-background text-theme-textSecondary min-h-screen;
   }
   html {
     scroll-behavior: smooth;
@@ -34,7 +39,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Sora", sans-serif;
+    @apply font-heading font-semibold text-3xl;
   }
   .text-label {
     @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
